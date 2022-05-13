@@ -3,6 +3,7 @@ const server = express();
 
 //need to add router and middleware here
 const projRouter = require('./projects/projects-router')
+const actionsRouter = require('./actions/actions-router')
 
 server.use(express.json())
 // Configure your server here
@@ -11,5 +12,6 @@ server.use(express.json())
 // Do NOT `server.listen()` inside this file!
 
 server.use('/api/projects', projRouter)
+server.use('/api/actions', actionsRouter)
 
 module.exports = server;
