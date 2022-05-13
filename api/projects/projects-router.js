@@ -4,9 +4,8 @@ const Project = require('./projects-model')
 const { validateProjectId, validatePost } = require('./projects-middleware')
 
 const router = express.Router()
-//
+
 router.get('/', (req, res, next) => {
-    // RETURN AN ARRAY WITH ALL THE PROJECTS
     Project.get(req.params.id)
     .then(projects => {
       res.json(projects)

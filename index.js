@@ -15,7 +15,7 @@ Pull your server into this file and start it!
 
 require('dotenv').config()
 const server = require('./api/server')
-const PORT = process.env.PORT //|| 9000; // allows port to change
+const PORT = process.env.PORT || 9000
 
 if(PORT == null) {
     console.error('no port set')

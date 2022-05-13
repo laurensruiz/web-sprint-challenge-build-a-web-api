@@ -1,7 +1,6 @@
 const express = require('express');
 const server = express();
 
-//need to add router and middleware here
 const projRouter = require('./projects/projects-router')
 const actionsRouter = require('./actions/actions-router')
 
