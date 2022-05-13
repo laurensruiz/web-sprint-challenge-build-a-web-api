@@ -16,19 +16,26 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', validateProjectId, (req, res) => {
     res.json(req.p)
-})
+});
 
 router.post('/', validatePost, (req, res, next) => {
-    Project.insert({
-        name: req.name, 
-        description: req.description, 
-        completed: req.completed})
+    Project.insert(req.body)
     .then(newProj => {
         res.status(201).json(newProj)
     })
     .catch(next)
 })
 
+router.put('/:id', validateProjectId, validatePost, (req, res, next) => {
+    Project.update(req.params.id, req.body)
+    .then(() => {
+        return Project.get(req.params.id)
+    })
+    .then(updatedProj => {
+        res.json(updatedProj)
+    })
+    .catch(next) 
+})
 
 //error handling middleware
 

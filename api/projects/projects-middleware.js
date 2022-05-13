@@ -21,15 +21,12 @@ async function validateProjectId(req, res, next) {
 }
 
 function validatePost(req, res, next) {
-    const {name, description, completed} = req.body
-    if(!name || !description || !completed){
+    const {name, description, completed } = req.body
+    if(!name || !description || typeof completed !== 'boolean'){
         res.status(400).json({
             message: "Please provide all details"
         })
     } else {
-        req.name = name,
-        req.description = description,
-        req.completed = completed,
         next()
     }
 }
