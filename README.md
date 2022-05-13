@@ -147,7 +147,35 @@ We have provided test data for all the resources.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+
+Node.js is an open-source, cross-platform runtime environment that allows developers to create all kinds of server-side tools and applications in JavaScript. Node was designed to optimize throughput and scalability in web applications and it uses Javascript as a coding language making it easier for developers to use. Node also allows access to NPM which has hundreds of reusable packages to help automate the build toolchain.
+
+Express provides methods to specify what function is called for a particular HTTP verb (GET, POST, SET, etc.) and URL pattern ("Route"), and methods to specify what template ("view") engine is used, where template files are located, and what template to use to render a response. 
+
 1. Understand and explain the use of Middleware.
+
+Middleware is software that provides common services and capabilities to applications outside of what’s offered by the operating system. Data management, application services, messaging, authentication, and API management are all commonly handled by middleware.
+
+Middleware helps developers build applications more efficiently. It acts like the connective tissue between applications, data, and users.
+
 1. The basic principles of the REST architectural style.
+
+- Uniform interface: a developer must decide the APIs interface for resources in the system
+
+- Client–server: Client applications and server applications must be able to evolve separately without any dependency on each other. 
+
+- Stateless: Make all client-server interactions stateless. The server will not store anything about the latest HTTP request the client made
+
+- Cacheable: Caching brings performance improvement for the client-side and better scope for scalability for a server because the load has been reduced.
+
+- Layered system: A layered system architecture is where you deploy the APIs on server A, and store data on server B and authenticate requests in Server C.
+
+- Code on demand: you are free to return executable code to support a part of your application, e.g., clients may call your API to get a UI widget rendering code. 
+
 1. Understand and explain the use of Express Routers.
+
+Express router is a class which helps us to create router handlers. A router handler is not just providing routing to the app but also the ability to extend this routing to handle validation, handle 404 or other errors etc.
+
 1. Describe tooling used to manually test the correctness of an API.
+
+To test an API, you can use Postman or HTTPie to check how the data is affected using CRUD operations. It is helpful when trying to test whether or not the code being implemented is affecting the API as the developer wishes it to be. It also allows access to the API to ensure the correct data is being passed through.
