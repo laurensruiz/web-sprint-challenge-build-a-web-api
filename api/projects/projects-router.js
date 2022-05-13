@@ -37,6 +37,22 @@ router.put('/:id', validateProjectId, validatePost, (req, res, next) => {
     .catch(next) 
 })
 
+router.delete('/:id', validateProjectId, (req, res, next) =>{
+    Project.remove(req.params.id)
+    .then( deletedUser=> {
+        res.status(200).json(deletedUser)
+    })
+   .catch(next)
+})
+
+router.get('/:id/actions', validateProjectId, (req, res, next)=> {
+    Project.getProjectActions(req.params.id)
+    .then(actions => {
+        res.status(200).json(actions)
+    })
+    .catch(next)
+})
+
 //error handling middleware
 
 router.use((err, req, res, next) => { //eslint-disable-line
