@@ -20,6 +20,20 @@ async function validateProjectId(req, res, next) {
   }
 }
 
+function validatePost(req, res, next) {
+    const {name, description, completed} = req.body
+    if(!name || !description || !completed){
+        res.status(400).json({
+            message: "Please provide all details"
+        })
+    } else {
+        req.name = name,
+        req.description = description,
+        req.completed = completed,
+        next()
+    }
+}
 
 
-module.exports = {validateProjectId}
+
+module.exports = {validateProjectId, validatePost}
